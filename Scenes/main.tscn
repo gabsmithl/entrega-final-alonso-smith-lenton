@@ -1,0 +1,224 @@
+[gd_scene format=3 uid="uid://kad05da1758r"]
+
+[ext_resource type="PackedScene" uid="uid://bglnmvy1rly7x" path="res://Scenes/mapa.tscn" id="1_bo1nx"]
+[ext_resource type="Script" uid="uid://cddafwiulbjjf" path="res://Scripts/main.gd" id="1_kry3j"]
+[ext_resource type="PackedScene" uid="uid://dq0qek7juhxoi" path="res://Scenes/player.tscn" id="2_8gbba"]
+[ext_resource type="PackedScene" uid="uid://ddj8ft2rk53b4" path="res://Scenes/mesetas.tscn" id="4_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://buflncflqeo1p" path="res://Scenes/tren.tscn" id="5_kry3j"]
+[ext_resource type="PackedScene" uid="uid://xpeofife62h6" path="res://cactus.tscn" id="6_21xkr"]
+[ext_resource type="PackedScene" uid="uid://rq7xhiud43q6" path="res://Scenes/bush.tscn" id="6_344ge"]
+[ext_resource type="AudioStream" uid="uid://dqbmteuxuy8t6" path="res://Assets/Music/El Macho.mp3" id="7_6bp64"]
+
+[node name="Main" type="Node2D" unique_id=1775039598]
+script = ExtResource("1_kry3j")
+metadata/_edit_vertical_guides_ = [4052.0]
+
+[node name="Mapa" parent="." unique_id=1285499812 instance=ExtResource("1_bo1nx")]
+
+[node name="Player" parent="." unique_id=2060294213 instance=ExtResource("2_8gbba")]
+position = Vector2(415, 437)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1206040331]
+position = Vector2(414, 387)
+zoom = Vector2(1.5, 1.5)
+limit_left = 0
+limit_right = 4350
+
+[node name="Mesetas" parent="." unique_id=1091378108 instance=ExtResource("4_jjvhh")]
+position = Vector2(1099, 192)
+
+[node name="Mesetas2" parent="." unique_id=2103353036 instance=ExtResource("4_jjvhh")]
+position = Vector2(2149, 192)
+
+[node name="Tren" parent="." unique_id=2145012185 instance=ExtResource("5_kry3j")]
+process_mode = 4
+visible = false
+position = Vector2(2037, 366)
+
+[node name="Bush" parent="." unique_id=22044177 instance=ExtResource("6_344ge")]
+position = Vector2(847, 468)
+
+[node name="Bush2" parent="." unique_id=1108200938 instance=ExtResource("6_344ge")]
+position = Vector2(1286, 518)
+
+[node name="Cactus" type="Node2D" parent="." unique_id=1642126431]
+
+[node name="cactus" parent="Cactus" unique_id=496657683 instance=ExtResource("6_21xkr")]
+position = Vector2(532, 393)
+
+[node name="cactus2" parent="Cactus" unique_id=1068808496 instance=ExtResource("6_21xkr")]
+position = Vector2(440, 388)
+
+[node name="cactus3" parent="Cactus" unique_id=1550202652 instance=ExtResource("6_21xkr")]
+position = Vector2(338, 408)
+
+[node name="cactus4" parent="Cactus" unique_id=35722530 instance=ExtResource("6_21xkr")]
+position = Vector2(330, 467)
+
+[node name="cactus5" parent="Cactus" unique_id=1774939734 instance=ExtResource("6_21xkr")]
+position = Vector2(349, 547)
+
+[node name="cactus6" parent="Cactus" unique_id=1003227797 instance=ExtResource("6_21xkr")]
+position = Vector2(482, 579)
+
+[node name="cactus7" parent="Cactus" unique_id=1066935788 instance=ExtResource("6_21xkr")]
+position = Vector2(618, 575)
+
+[node name="cactus8" parent="Cactus" unique_id=164513633 instance=ExtResource("6_21xkr")]
+position = Vector2(665, 421)
+
+[node name="cactus9" parent="Cactus" unique_id=1692687087 instance=ExtResource("6_21xkr")]
+position = Vector2(752, 569)
+
+[node name="cactus10" parent="Cactus" unique_id=1829712259 instance=ExtResource("6_21xkr")]
+position = Vector2(770, 405)
+
+[node name="cactus11" parent="Cactus" unique_id=2055282310 instance=ExtResource("6_21xkr")]
+position = Vector2(869, 416)
+
+[node name="cactus12" parent="Cactus" unique_id=1755290907 instance=ExtResource("6_21xkr")]
+position = Vector2(876, 566)
+
+[node name="cactus13" parent="Cactus" unique_id=943137960 instance=ExtResource("6_21xkr")]
+position = Vector2(974, 403)
+
+[node name="cactus14" parent="Cactus" unique_id=834860831 instance=ExtResource("6_21xkr")]
+position = Vector2(1013, 549)
+
+[node name="cactus15" parent="Cactus" unique_id=336144518 instance=ExtResource("6_21xkr")]
+position = Vector2(1334, 451)
+
+[node name="cactus16" parent="Cactus" unique_id=684177291 instance=ExtResource("6_21xkr")]
+position = Vector2(1207, 415)
+
+[node name="cactus17" parent="Cactus" unique_id=1133059152 instance=ExtResource("6_21xkr")]
+position = Vector2(1143, 536)
+
+[node name="cactus18" parent="Cactus" unique_id=1638715531 instance=ExtResource("6_21xkr")]
+position = Vector2(1075, 432)
+
+[node name="cactus19" parent="Cactus" unique_id=1730766843 instance=ExtResource("6_21xkr")]
+position = Vector2(1348, 575)
+
+[node name="cactus20" parent="Cactus" unique_id=1532454625 instance=ExtResource("6_21xkr")]
+position = Vector2(1588, 432)
+
+[node name="cactus21" parent="Cactus" unique_id=1652812499 instance=ExtResource("6_21xkr")]
+position = Vector2(1580, 561)
+
+[node name="cactus22" parent="Cactus" unique_id=357164999 instance=ExtResource("6_21xkr")]
+position = Vector2(1796, 416)
+
+[node name="cactus23" parent="Cactus" unique_id=630718517 instance=ExtResource("6_21xkr")]
+position = Vector2(1802, 549)
+
+[node name="cactus24" parent="Cactus" unique_id=1710419491 instance=ExtResource("6_21xkr")]
+position = Vector2(2137, 502)
+
+[node name="cactus25" parent="Cactus" unique_id=1965089626 instance=ExtResource("6_21xkr")]
+position = Vector2(2213, 506)
+
+[node name="cactus26" parent="Cactus" unique_id=1981255602 instance=ExtResource("6_21xkr")]
+position = Vector2(2174, 476)
+
+[node name="cactus27" parent="Cactus" unique_id=405947844 instance=ExtResource("6_21xkr")]
+position = Vector2(2253, 470)
+
+[node name="cactus39" parent="Cactus" unique_id=455560477 instance=ExtResource("6_21xkr")]
+position = Vector2(2798, 573)
+
+[node name="cactus40" parent="Cactus" unique_id=863067447 instance=ExtResource("6_21xkr")]
+position = Vector2(3079, 514)
+
+[node name="cactus41" parent="Cactus" unique_id=1995123107 instance=ExtResource("6_21xkr")]
+position = Vector2(3021, 582)
+
+[node name="cactus42" parent="Cactus" unique_id=4002785 instance=ExtResource("6_21xkr")]
+position = Vector2(4290, 462)
+
+[node name="cactus43" parent="Cactus" unique_id=1357329162 instance=ExtResource("6_21xkr")]
+position = Vector2(4124, 628)
+
+[node name="cactus44" parent="Cactus" unique_id=417809594 instance=ExtResource("6_21xkr")]
+position = Vector2(4210, 444)
+
+[node name="cactus47" parent="Cactus" unique_id=2066916349 instance=ExtResource("6_21xkr")]
+position = Vector2(4145, 402)
+
+[node name="cactus45" parent="Cactus" unique_id=1056932604 instance=ExtResource("6_21xkr")]
+position = Vector2(4193, 595)
+
+[node name="cactus46" parent="Cactus" unique_id=502235905 instance=ExtResource("6_21xkr")]
+position = Vector2(4287, 623)
+
+[node name="cactus28" parent="Cactus" unique_id=1982035435 instance=ExtResource("6_21xkr")]
+position = Vector2(2295, 499)
+
+[node name="cactus29" parent="Cactus" unique_id=1913210872 instance=ExtResource("6_21xkr")]
+position = Vector2(2336, 473)
+
+[node name="cactus30" parent="Cactus" unique_id=476959671 instance=ExtResource("6_21xkr")]
+position = Vector2(2372, 502)
+
+[node name="cactus31" parent="Cactus" unique_id=754537452 instance=ExtResource("6_21xkr")]
+position = Vector2(2411, 485)
+
+[node name="cactus32" parent="Cactus" unique_id=1092785137 instance=ExtResource("6_21xkr")]
+position = Vector2(2097, 483)
+
+[node name="cactus33" parent="Cactus" unique_id=663711382 instance=ExtResource("6_21xkr")]
+position = Vector2(1878, 571)
+
+[node name="cactus34" parent="Cactus" unique_id=193082870 instance=ExtResource("6_21xkr")]
+position = Vector2(1875, 396)
+
+[node name="cactus35" parent="Cactus" unique_id=475666496 instance=ExtResource("6_21xkr")]
+position = Vector2(3252, 435)
+
+[node name="cactus48" parent="Cactus" unique_id=1543975730 instance=ExtResource("6_21xkr")]
+position = Vector2(3167, 605)
+
+[node name="cactus36" parent="Cactus" unique_id=1253160385 instance=ExtResource("6_21xkr")]
+position = Vector2(2893, 487)
+
+[node name="cactus37" parent="Cactus" unique_id=939908476 instance=ExtResource("6_21xkr")]
+position = Vector2(2671, 566)
+
+[node name="cactus51" parent="Cactus" unique_id=751319200 instance=ExtResource("6_21xkr")]
+position = Vector2(3286, 624)
+
+[node name="cactus55" parent="Cactus" unique_id=1552767771 instance=ExtResource("6_21xkr")]
+position = Vector2(3456, 607)
+
+[node name="cactus52" parent="Cactus" unique_id=1316982244 instance=ExtResource("6_21xkr")]
+position = Vector2(3981, 590)
+
+[node name="cactus57" parent="Cactus" unique_id=510057554 instance=ExtResource("6_21xkr")]
+position = Vector2(4051, 411)
+
+[node name="cactus53" parent="Cactus" unique_id=830115481 instance=ExtResource("6_21xkr")]
+position = Vector2(3832, 461)
+
+[node name="cactus58" parent="Cactus" unique_id=789930233 instance=ExtResource("6_21xkr")]
+position = Vector2(3808, 461)
+
+[node name="cactus54" parent="Cactus" unique_id=241767727 instance=ExtResource("6_21xkr")]
+position = Vector2(3618, 540)
+
+[node name="cactus56" parent="Cactus" unique_id=667111324 instance=ExtResource("6_21xkr")]
+position = Vector2(3753, 598)
+
+[node name="cactus49" parent="Cactus" unique_id=1716882547 instance=ExtResource("6_21xkr")]
+position = Vector2(2915, 618)
+
+[node name="cactus50" parent="Cactus" unique_id=782233105 instance=ExtResource("6_21xkr")]
+position = Vector2(2507, 583)
+
+[node name="cactus38" parent="Cactus" unique_id=1307999645 instance=ExtResource("6_21xkr")]
+position = Vector2(2679, 396)
+
+[node name="Musica" type="AudioStreamPlayer" parent="." unique_id=1857100297]
+stream = ExtResource("7_6bp64")
+volume_db = -27.0
+autoplay = true
+parameters/looping = true

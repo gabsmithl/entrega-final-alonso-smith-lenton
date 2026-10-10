@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://rq7xhiud43q6"]
+
+[ext_resource type="Script" uid="uid://cve2ldor3kdv7" path="res://Scripts/bush.gd" id="1_kx7ng"]
+[ext_resource type="Texture2D" uid="uid://xorrsp1fb7l0" path="res://Assets/Sprites/arbusto.png" id="2_3fki3"]
+
+[node name="Bush" type="Node2D" unique_id=22044177]
+script = ExtResource("1_kx7ng")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=818790222]
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_3fki3")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1778423734]
+rect = Rect2(-14, -17, 28, 31)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

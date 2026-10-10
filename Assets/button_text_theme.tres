@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3 uid="uid://bbxqvlyxs4h0v"]
+
+[ext_resource type="FontFile" uid="uid://d3g1f77y7vnm4" path="res://Assets/Pixelta.ttf" id="1_41df2"]
+
+[resource]
+RichTextLabel/constants/outline_size = 10
+RichTextLabel/font_sizes/normal_font_size = 70
+RichTextLabel/fonts/normal_font = ExtResource("1_41df2")

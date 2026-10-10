@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://biiom6uuku464"]
+
+[ext_resource type="Script" uid="uid://brnxfyxsek40q" path="res://Scripts/bullet.gd" id="1_oduel"]
+[ext_resource type="Texture2D" uid="uid://dlef24t6aysbm" path="res://Assets/Sprites/bala.png" id="1_xjght"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ycag2"]
+radius = 3.0
+height = 8.0
+
+[node name="Bullet" type="Node2D" unique_id=1569596817]
+texture_filter = 1
+script = ExtResource("1_oduel")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=149389012]
+collision_layer = 8
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=23710166]
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_ycag2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=968927729]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_xjght")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

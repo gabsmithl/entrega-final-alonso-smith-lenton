@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://cbih5x3k1twlr"]
+
+[ext_resource type="Script" uid="uid://dugdr4rb748xa" path="res://Scripts/enemy.gd" id="1_xo8dl"]
+[ext_resource type="Texture2D" uid="uid://bjit8oyqci0hl" path="res://Assets/Sprites/enemigo-ventana.png" id="2_k3ggx"]
+[ext_resource type="AudioStream" uid="uid://bwsdpolvnefr7" path="res://Assets/SFX/balaEnemigo.mp3" id="3_k3ggx"]
+[ext_resource type="AudioStream" uid="uid://bsmn6clx3psj1" path="res://Assets/SFX/dmg_enemigo.mp3" id="4_tlag4"]
+[ext_resource type="AudioStream" uid="uid://bmeirj2gdhnfs" path="res://Assets/SFX/muerte.mp3" id="5_ghq14"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_myxct"]
+size = Vector2(14, 18)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_22yot"]
+random_pitch = 1.122462
+streams_count = 1
+stream_0/stream = ExtResource("3_k3ggx")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kuarw"]
+bg_color = Color(0.4710176, 0.11962805, 4.813075e-08, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7npt"]
+bg_color = Color(0.5032217, 0.6627321, 0.24434182, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Theme" id="Theme_k3ggx"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_kuarw")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_w7npt")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_qkyte"]
+random_pitch = 1.1553527
+streams_count = 1
+stream_0/stream = ExtResource("4_tlag4")
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1851422296]
+z_index = 1
+collision_layer = 64
+script = ExtResource("1_xo8dl")
+
+[node name="SpriteEnemy" type="Sprite2D" parent="." unique_id=795708727]
+texture = ExtResource("2_k3ggx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1733430880]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_myxct")
+
+[node name="GunTip" type="Marker2D" parent="." unique_id=972035497]
+position = Vector2(0, 6)
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=858305919]
+target_position = Vector2(450, 0)
+collision_mask = 2
+
+[node name="Timer" type="Timer" parent="." unique_id=916855598]
+wait_time = 0.545
+autostart = true
+
+[node name="enemigo_sonido" type="AudioStreamPlayer" parent="." unique_id=32621421]
+stream = SubResource("AudioStreamRandomizer_22yot")
+volume_db = -2.5
+bus = &"SFX"
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=1996795093]
+offset_left = -18.0
+offset_top = -17.0
+offset_right = 18.0
+offset_bottom = -13.0
+theme = SubResource("Theme_k3ggx")
+show_percentage = false
+
+[node name="hit_sonido" type="AudioStreamPlayer" parent="." unique_id=204879600]
+stream = SubResource("AudioStreamRandomizer_qkyte")
+max_polyphony = 4
+bus = &"SFX"
+
+[node name="muerte_sonido" type="AudioStreamPlayer" parent="." unique_id=1104314268]
+stream = ExtResource("5_ghq14")
+volume_db = -3.5
+bus = &"SFX"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

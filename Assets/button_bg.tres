@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://h5luvg03qnmn"]
+
+[ext_resource type="Texture2D" uid="uid://63e5mwlkn1ob" path="res://Assets/Sprites/freefantasy.png" id="1_17kso"]
+
+[resource]
+atlas = ExtResource("1_17kso")
+region = Rect2(138, 2, 45, 29)

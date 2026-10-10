@@ -1,0 +1,154 @@
+[gd_scene format=3 uid="uid://cp1gopaewstmv"]
+
+[ext_resource type="Script" uid="uid://blnjbdu8bnb4r" path="res://Scripts/main_menu.gd" id="1_n45e2"]
+[ext_resource type="Texture2D" uid="uid://cbgj31b104v6y" path="res://Assets/Sprites/background_menu.jpg" id="2_opfnp"]
+[ext_resource type="Theme" uid="uid://dfls2uj5lkkjm" path="res://Assets/title_theme.tres" id="3_cp0ys"]
+[ext_resource type="Texture2D" uid="uid://h5luvg03qnmn" path="res://Assets/button_bg.tres" id="4_yhxw7"]
+[ext_resource type="Theme" uid="uid://bbxqvlyxs4h0v" path="res://Assets/button_text_theme.tres" id="5_n45e2"]
+[ext_resource type="AudioStream" uid="uid://dpaaiwop0waun" path="res://Assets/Music/titlescreen.mp3" id="6_opfnp"]
+
+[node name="Main_Menu" type="Node2D" unique_id=1252940582]
+script = ExtResource("1_n45e2")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=296241368]
+texture_filter = 1
+offset_left = -24.0
+offset_top = -16.0
+offset_right = 1176.0
+offset_bottom = 659.0
+texture = ExtResource("2_opfnp")
+
+[node name="MenuCanvas" type="CanvasLayer" parent="." unique_id=751916964]
+
+[node name="Title" type="RichTextLabel" parent="MenuCanvas" unique_id=2144699809]
+offset_left = -16.0
+offset_top = 40.0
+offset_right = 1174.0
+offset_bottom = 302.0
+theme = ExtResource("3_cp0ys")
+text = "Untitled Cowboy
+Game"
+horizontal_alignment = 1
+
+[node name="PlayButton" type="TextureButton" parent="MenuCanvas" unique_id=559810963]
+texture_filter = 1
+offset_left = 476.99997
+offset_top = 385.99997
+offset_right = 522.0
+offset_bottom = 414.99997
+scale = Vector2(4.5, 4.5)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_yhxw7")
+
+[node name="PlayLabel" type="RichTextLabel" parent="MenuCanvas" unique_id=2091733197]
+texture_filter = 1
+offset_left = 472.0
+offset_top = 384.0
+offset_right = 688.0
+offset_bottom = 512.0
+mouse_filter = 2
+theme = ExtResource("5_n45e2")
+text = "Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreditButton" type="TextureButton" parent="MenuCanvas" unique_id=109649975]
+texture_filter = 1
+offset_left = 133.0
+offset_top = 386.0
+offset_right = 178.0
+offset_bottom = 415.0
+scale = Vector2(4.5, 4.5)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_yhxw7")
+
+[node name="CreditLabel" type="RichTextLabel" parent="MenuCanvas" unique_id=1514247264]
+texture_filter = 1
+offset_left = 128.0
+offset_top = 384.0
+offset_right = 344.0
+offset_bottom = 512.0
+mouse_filter = 2
+theme = ExtResource("5_n45e2")
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SalirButton" type="TextureButton" parent="MenuCanvas" unique_id=313590963]
+texture_filter = 1
+offset_left = 829.0
+offset_top = 386.0
+offset_right = 874.0
+offset_bottom = 415.0
+scale = Vector2(4.5, 4.5)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_yhxw7")
+
+[node name="SalirLabel" type="RichTextLabel" parent="MenuCanvas" unique_id=1298131473]
+texture_filter = 1
+offset_left = 824.0
+offset_top = 384.0
+offset_right = 1040.0
+offset_bottom = 512.0
+mouse_filter = 2
+theme = ExtResource("5_n45e2")
+text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreditsCanvas" type="CanvasLayer" parent="." unique_id=577296004]
+visible = false
+
+[node name="Credits" type="RichTextLabel" parent="CreditsCanvas" unique_id=1194219193]
+offset_left = -24.0
+offset_top = 16.0
+offset_right = 1166.0
+offset_bottom = 278.0
+theme = ExtResource("3_cp0ys")
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="Names" type="RichTextLabel" parent="CreditsCanvas" unique_id=1468977029]
+offset_left = -24.0
+offset_top = 200.0
+offset_right = 1166.0
+offset_bottom = 462.0
+theme = ExtResource("3_cp0ys")
+theme_override_font_sizes/normal_font_size = 100
+text = "Joaquin Alonso
+
+Gabriel Smith-Lenton"
+horizontal_alignment = 1
+
+[node name="VolverButton" type="TextureButton" parent="CreditsCanvas" unique_id=1631343510]
+texture_filter = 1
+offset_left = 477.0
+offset_top = 474.0
+offset_right = 522.0
+offset_bottom = 503.0
+scale = Vector2(4.5, 4.5)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_yhxw7")
+
+[node name="SalirLabel" type="RichTextLabel" parent="CreditsCanvas" unique_id=410712487]
+texture_filter = 1
+offset_left = 472.0
+offset_top = 472.0
+offset_right = 688.0
+offset_bottom = 600.0
+mouse_filter = 2
+theme = ExtResource("5_n45e2")
+text = "Volver"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1889487166]
+stream = ExtResource("6_opfnp")
+volume_db = -11.5
+autoplay = true
+parameters/looping = true
+
+[connection signal="pressed" from="MenuCanvas/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MenuCanvas/CreditButton" to="." method="_on_credit_button_pressed"]
+[connection signal="pressed" from="MenuCanvas/SalirButton" to="." method="_on_salir_button_pressed"]
+[connection signal="pressed" from="CreditsCanvas/VolverButton" to="." method="_on_volver_button_pressed"]

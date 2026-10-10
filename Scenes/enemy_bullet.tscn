@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://byefffikv044"]
+
+[ext_resource type="Script" uid="uid://dm1avg02b5ybw" path="res://Scripts/enemy_bullet.gd" id="1_54jiv"]
+[ext_resource type="Texture2D" uid="uid://dlef24t6aysbm" path="res://Assets/Sprites/bala.png" id="2_b6yqb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_myxct"]
+radius = 3.0
+height = 8.0
+
+[node name="enemy_bullet" type="Node2D" unique_id=817170076]
+script = ExtResource("1_54jiv")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1500647005]
+collision_layer = 32
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=961781620]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_myxct")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=594839622]
+modulate = Color(1, 0.5529412, 0.44313726, 1)
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_b6yqb")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
